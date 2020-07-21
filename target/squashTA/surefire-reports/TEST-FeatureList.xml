@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite time="1.143" failures="0" tests="1" name="FeatureList" >
-  <testcase time="1.074" classname="FeatureList" name="Eco.setup" />
-  <testcase time="0.063" classname="FeatureList" name="tf_sample.simple.feature" />
-</testsuite>
