@@ -1,8 +1,8 @@
 # Automation priority: null
 # Automation status: TRANSMITTED
 # Test case importance: LOW
-# language: fr
-Fonctionnalité: Are 1 and 1 2?
+# language: en
+Feature: Are 1 and 1 2?
   feature for testing TF Framework
 
   @TFSample
