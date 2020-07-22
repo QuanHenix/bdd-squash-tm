@@ -26,6 +26,7 @@ import cucumber.api.java.fr.Alors;
 import cucumber.api.java.fr.Etantdonnéque;
 import cucumber.api.java.fr.Quand;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -122,7 +123,10 @@ public class AnnotationSteps {
 
 	@Alors("le message suivant est affiché dans une pop up :")
 	public void le_message_suivant_est_affiche_dans_une_pop_up(String docString) {
-		System.out.println("to be continued");
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		Assert.assertTrue(testCaseInfoPage.isAlertPresent(wait));
+		Alert alert = driver.switchTo().alert();
+		Assert.assertEquals(docString, alert.getText());
 	}
 
 	@After

@@ -1,6 +1,7 @@
 package squash.page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -27,5 +28,16 @@ public class TestCaseInfoPage extends AbstractPage {
         WebElement keywordTestStepAddButton = getDriver().findElement(By.id("add-keyword-test-step-btn"));
         wait.until(ExpectedConditions.elementToBeClickable(keywordTestStepAddButton));
         keywordTestStepAddButton.click();
+    }
+
+    public boolean isAlertPresent(WebDriverWait wait) {
+        boolean foundAlert;
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            foundAlert = true;
+        } catch (TimeoutException eTO) {
+            foundAlert = false;
+        }
+        return foundAlert;
     }
 }
