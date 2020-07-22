@@ -5,6 +5,11 @@
 Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas de test bdd
   
   Plan du Scénario: Saisie incorrecte d'un paramètre d'une action
+  Etant donné que je suis sur la page d'authentification Squash
+  Etant donné que je me connecte en tant que "tmLauncher" avec mot de passe "tmLauncher"
+  Etant donné que je suis sur la page d'accueil Squash
+  Etant donné que je navigate au CdT BBD dont l'id est 272 
+  
   Etant donné que je saisis un paramètre dans un pas de test
   Quand dans la zone Action je saisis : <saisie>
   Alors je suis dans le cas suivant : <cas>
