@@ -23,27 +23,31 @@ package squash;
 import cucumber.api.java.fr.Alors;
 import cucumber.api.java.fr.Etantdonnéque;
 import cucumber.api.java.fr.Quand;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class AnnotationSteps {
+	private WebDriver driver;
 
 	@Etantdonnéque("je saisis un paramètre dans un pas de test")
-	public void je_saisis_un_paramètre_dans_un_pas_de_test() {
-		// Write code here that turns the phrase above into concrete actions
-		System.out.println("Hello 5");
+	public void je_saisis_un_paramètre_dans_un_pas_de_test() throws InterruptedException {
+		driver = new ChromeDriver();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.get("http://127.0.0.1:8080/squash");
+		Thread.sleep(1000);
+		driver.close();
 	}
 
 	@Quand("dans la zone Action je saisis : {string}")
 	public void dans_la_zone_Action_je_saisis(String string) {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 1");
+
 	}
 
 	@Alors("je suis dans le cas suivant : chevron ouvrant présent mais pas de chevron fermant")
 	public void je_suis_dans_le_cas_suivant_chevron_ouvrant_présent_mais_pas_de_chevron_fermant() {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 2");
+
 	}
 
 
