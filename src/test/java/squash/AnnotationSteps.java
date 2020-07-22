@@ -34,6 +34,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import squash.page.HomeWorkspacePage;
 import squash.page.LoginPage;
 import squash.page.TestCaseInfoPage;
+import squash.utils.SlowWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -44,9 +45,9 @@ public class AnnotationSteps {
 
 	@Before
 	public void setup(){
-		driver = new ChromeDriver();
+		driver = new SlowWebDriver(new ChromeDriver(), 2000);
 		wait = new WebDriverWait(driver, 100);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.get(SQUASH_URL);
 	}
 
