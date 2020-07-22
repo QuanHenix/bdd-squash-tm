@@ -82,13 +82,13 @@ public class AnnotationSteps {
 	}
 
 	////////////////// 239 //////////////////
-	@Etantdonnéque("je saisis le texte pour une nouvelle action {String}")
+	@Etantdonnéque("je saisis le texte pour une nouvelle action {string}")
 	public void je_saisis_le_texte_pour_une_nouvelle_action(String input) {
 		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
 		testCaseInfoPage.fillActionWordInput(wait, input);
 	}
 
-	@Etantdonnéque("je saisis le param pour une nouvelle action {String}")
+	@Etantdonnéque("je saisis le param pour une nouvelle action {string}")
 	public void je_saisis_le_param_pour_une_nouvelle_action(String input) {
 		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
 		testCaseInfoPage.fillActionWordInput(wait, input);
