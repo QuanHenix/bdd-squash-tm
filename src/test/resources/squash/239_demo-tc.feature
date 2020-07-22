@@ -24,7 +24,7 @@ Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas
   Exemples:
       
     |cas                                                 |saisie     |
-    |chevron ouvrant présent mais pas de chevron fermant |"'<'param" |
+    |chevron ouvrant présent mais pas de chevron fermant |"<param"   |
     |chevron fermant présent mais pas de chevron ouvrant |"param>"   |
     |pas de paramètre renseigné entre les chevrons       |"<>"       |
     |caractère interdit                                  |"&"        |
