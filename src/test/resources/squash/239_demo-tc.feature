@@ -10,8 +10,9 @@ Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas
   Etant donné que je suis sur la page d'accueil Squash
   Etant donné que je navigate au CdT BBD dont l'id est 272 
   
-  Etant donné que je saisis un paramètre dans un pas de test
-  Quand dans la zone Action je saisis : <saisie>
+  Etant donné que je saisis le texte pour une nouvelle action "Today is "
+  Etant donné que je saisis le param pour une nouvelle action <saisie>
+  Quand j'ajoute un nouveau pas de test avec l'action saisie
   Alors je suis dans le cas suivant : <cas>
   Et le message suivant est affiché dans une pop up :
   """
