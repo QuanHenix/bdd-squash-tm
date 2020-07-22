@@ -45,7 +45,7 @@ public class AnnotationSteps {
 
 	@Before
 	public void setup(){
-		driver = new SlowWebDriver(new ChromeDriver(), 2000);
+		driver = new SlowWebDriver(new ChromeDriver(), 1000);
 		wait = new WebDriverWait(driver, 100);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.get(SQUASH_URL);
@@ -81,51 +81,48 @@ public class AnnotationSteps {
 		Assert.assertEquals("Test case name href must be the same to test case url.", testCaseUrl, testCaseNameElement.getAttribute("href"));
 	}
 
-	@Etantdonnéque("je saisis un paramètre dans un pas de test")
-	public void je_saisis_un_paramètre_dans_un_pas_de_test() {
-		System.out.println("Hello 1");
-
-
-
+	////////////////// 239 //////////////////
+	@Etantdonnéque("je saisis le texte pour une nouvelle action {String}")
+	public void je_saisis_le_texte_pour_une_nouvelle_action(String input) {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.fillActionWordInput(wait, input);
 	}
 
-	@Quand("dans la zone Action je saisis : {string}")
-	public void dans_la_zone_Action_je_saisis(String string) {
-		System.out.println("Hello 2");
+	@Etantdonnéque("je saisis le param pour une nouvelle action {String}")
+	public void je_saisis_le_param_pour_une_nouvelle_action(String input) {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.fillActionWordInput(wait, input);
+	}
+
+	@Quand("j'ajoute un nouveau pas de test avec l'action saisie")
+	public void je_ajoute_un_nouveau_pas_de_test_avec_l_action_saisie() {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.addNewKeywordTestStep(wait);
 	}
 
 	@Alors("je suis dans le cas suivant : chevron ouvrant présent mais pas de chevron fermant")
-	public void je_suis_dans_le_cas_suivant_chevron_ouvrant_présent_mais_pas_de_chevron_fermant() {
-		System.out.println("Hello 3");
-	}
-
-
-	@Alors("le message suivant est affiché dans une pop up :")
-	public void le_message_suivant_est_affiché_dans_une_pop_up(String docString) {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 4");
+	public void je_suis_dans_le_cas_suivant_chevron_ouvrant_present_mais_pas_de_chevron_fermant() {
+		System.out.println("je suis dans le cas suivant : chevron ouvrant présent mais pas de chevron fermant");
 	}
 
 	@Alors("je suis dans le cas suivant : chevron fermant présent mais pas de chevron ouvrant")
-	public void je_suis_dans_le_cas_suivant_chevron_fermant_présent_mais_pas_de_chevron_ouvrant() {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 5");
+	public void je_suis_dans_le_cas_suivant_chevron_fermant_present_mais_pas_de_chevron_ouvrant() {
+		System.out.println("je suis dans le cas suivant : chevron fermant présent mais pas de chevron ouvrant");
 	}
 
 	@Alors("je suis dans le cas suivant : pas de paramètre renseigné entre les chevrons")
-	public void je_suis_dans_le_cas_suivant_pas_de_paramètre_renseigné_entre_les_chevrons() {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 6");
+	public void je_suis_dans_le_cas_suivant_pas_de_parametre_renseigne_entre_les_chevrons() {
+		System.out.println("je suis dans le cas suivant : pas de paramètre renseigné entre les chevrons");
 	}
 
 	@Alors("je suis dans le cas suivant : caractère interdit")
-	public void je_suis_dans_le_cas_suivant_caractère_interdit() {
-		// Write code here that turns the phrase above into concrete actions
-//		throw new cucumber.api.PendingException();
-		System.out.println("Hello 7");
+	public void je_suis_dans_le_cas_suivant_caractere_interdit() {
+		System.out.println("je suis dans le cas suivant : caractère interdit");
+	}
+
+	@Alors("le message suivant est affiché dans une pop up :")
+	public void le_message_suivant_est_affiche_dans_une_pop_up(String docString) {
+		System.out.println("to be continued");
 	}
 
 	@After
