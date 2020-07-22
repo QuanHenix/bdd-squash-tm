@@ -1,5 +1,6 @@
-package squash.demo;
+package squash.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,12 +25,12 @@ public class LoginPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void fillUserNameAndPasswordInput(WebDriverWait wait, String input){
+    public void fillUserNameAndPasswordInput(WebDriverWait wait, String username, String password){
         waitUntilDocumentReadyStateComplete(wait);
         wait.until(ExpectedConditions.elementToBeClickable(userNameInput));
         wait.until(ExpectedConditions.elementToBeClickable(passwordInput));
-        userNameInput.sendKeys("tmLauncher");
-        passwordInput.sendKeys("tmLauncher");
+        userNameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
     }
 
     public void loginToHomePage(WebDriverWait wait){
@@ -37,4 +38,5 @@ public class LoginPage extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginButton.click();
     }
+
 }

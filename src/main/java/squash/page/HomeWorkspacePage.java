@@ -1,5 +1,6 @@
-package squash.demo;
+package squash.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -12,5 +13,7 @@ public class HomeWorkspacePage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-
+    public boolean checkHomePage() {
+        return getDriver().findElements(By.xpath("//h2[text() = 'HOME']")).size() != 0;
+    }
 }
