@@ -17,8 +17,8 @@ Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas
   Et le message suivant est affiché dans une pop up :
   """
   Le nom d'au moins un des paramètres est invalide :
-  Il doit être saisi entre les caractères '<' et '>'
-  Seuls les lettres majuscules, minuscules, les chiffres et les tirets - et _ sont autorisés 
+  Il doit être saisi entre les caractères < et >
+  Seules les lettres majuscules, minuscules, les chiffres et les tirets - et _ sont autorisés 
   Il ne peut pas être vide
   """
   
