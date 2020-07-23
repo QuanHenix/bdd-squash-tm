@@ -30,6 +30,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import squash.page.HomeWorkspacePage;
 import squash.page.LoginPage;
@@ -99,8 +100,8 @@ public class AnnotationSteps {
 	public void je_ajoute_un_nouveau_pas_de_test_avec_l_action_saisie() {
 		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
 		testCaseInfoPage.addNewKeywordTestStep(wait);
-		int temp = testCaseInfoPage.getDriver().getWindowHandles().size();
 		this.popup = testCaseInfoPage.getDriver().findElement(By.id("generic-error-dialog"));
+		wait.until(ExpectedConditions.elementToBeClickable(popup));
 		Assert.assertNotNull(popup);
 	}
 
@@ -129,9 +130,6 @@ public class AnnotationSteps {
 		WebElement popupErrorMsg = driver.findElement(By.xpath("//div[@class='generic-error-main display-table-cell']"));
 		Assert.assertNotNull(popupErrorMsg);
 		String actual = popupErrorMsg.getText();
-		System.out.println(actual);
-		System.out.println("**********************************");
-		System.out.println(docString);
 		Assert.assertEquals(docString, actual);
 	}
 
