@@ -42,7 +42,7 @@ import squash.utils.SlowWebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class AnnotationSteps {
-	private static final String SQUASH_URL = "http://127.0.0.1:8082/squash";//"http://127.0.0.1:8080/squash";
+	private static final String SQUASH_URL = "http://127.0.0.1:8080/squash";
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private WebElement popup;
