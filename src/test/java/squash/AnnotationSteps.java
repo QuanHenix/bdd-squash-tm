@@ -42,17 +42,13 @@ import squash.utils.SlowWebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class AnnotationSteps {
-	private static final String SQUASH_URL = "http://127.0.0.1:8080/squash";
+	private static final String SQUASH_URL = "http://192.168.56.209:8080/squash";
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private WebElement popup;
 
 	@Before
 	public void setup(){
-		//if in Linux OS
-		//System.setProperty("webdriver.chrome.driver", "./src/main/resources/util/linux_chromedriver.exe");
-		//if in Win OS
-		//System.setProperty("webdriver.chrome.driver", "./src/main/resources/util/win_chromedriver.exe");
 		WebDriver tempDriver = new ChromeDriver();
 		driver = new SlowWebDriver(tempDriver, 500);
 		wait = new WebDriverWait(driver, 20);
